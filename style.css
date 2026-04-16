@@ -338,8 +338,6 @@ body {
 }
 
 /* ===== VIDEO ===== */
-/* ===== VIDEO ===== */
-
 /* wrapper video biar punya tinggi (16:9) dan iframe bisa absolute */
 .garmin-card-media {
   position: relative;
@@ -404,5 +402,87 @@ body {
 .footer-link:hover,
 .footer-link:active {
   text-decoration: none !important;
+}
+
+/* revisi untuk mobile */
+/* =======================================================
+   FINAL FIX MOBILE + TABLET
+   - hilangkan scroll ke kanan
+
+
+   /* ---------- MOBILE ONLY: anti scroll ke kanan ---------- */
+@media (max-width: 767.98px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    position: relative;
+  }
+
+  .navbar,
+  .hero-bg,
+  .services-section,
+  #product,
+  #event,
+  .related-links-section,
+  #about,
+  #faqs {
+    overflow-x: hidden;
+  }
+
+  .navbar .container {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .navbar-brand {
+    min-width: 0;
+    max-width: calc(100% - 56px);
+    flex: 1 1 auto;
+  }
+
+  .brand-text {
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+    font-size: 0.92rem;
+    line-height: 1.15;
+  }
+
+  .brand-logo,
+  .navbar-toggler {
+    flex-shrink: 0;
+  }
+
+  .text-nowrap {
+    white-space: normal !important;
+  }
+
+  #faqs .text-white,
+  #faqs .text-white-50,
+  #faqs .footer-link,
+  #faqs h3,
+  #faqs h5,
+  #faqs div,
+  #faqs a {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  img,
+  iframe,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .row {
+    margin-right: 0;
+    margin-left: 0;
+  }
 }
 
