@@ -11,17 +11,20 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
     target.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 });
-
-// Back to top
+// Back to top aman
 const backToTop = document.getElementById("backToTop");
-window.addEventListener("scroll", () => {
-  backToTop.style.display = window.scrollY > 600 ? "inline-flex" : "none";
-});
-backToTop.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
 
-// Update New Year Otomatis
+if (backToTop) {
+  window.addEventListener("scroll", () => {
+    backToTop.style.display = window.scrollY > 600 ? "inline-flex" : "none";
+  });
+
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
+
+// Update New Year otomatis
 (() => {
   const el = document.getElementById("copyrightYear");
   if (el) el.textContent = new Date().getFullYear();
